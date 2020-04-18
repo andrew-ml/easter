@@ -7,7 +7,7 @@ body {
 body {
   font-family: Helvetica, Arial, sans-serif;
   background: #fff;
-  background: #fbfbfb url(bg.png) repeat center top;
+  background: #fbfbfb url(images/bg.png) repeat center top;
 }
 
 .easter-container {
@@ -108,7 +108,7 @@ body {
   right: 0;
   left: 0;
   bottom: 0;
-  background: #fbfbfb url(bg.png) repeat center top;
+  background: #fbfbfb url(images/bg.png) repeat center top;
 }
 .outro.active {
   display: flex;
