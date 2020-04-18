@@ -1,43 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <meta charset="UTF-8" />
+    <title>Video Chat with PeerJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/peerjs@0.3.20/dist/peer.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="call-section.css" />
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <video
+      id="my-camera"
+      width="300"
+      height="300"
+      autoplay="autoplay"
+      muted="true"
+      class="my-camera"
+    ></video>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <div class="call-section" id="call-section">
+      <video
+        id="peer-camera"
+        width="300"
+        height="300"
+        autoplay="autoplay"
+        muted="true"
+        class="peer-camera"
+      ></video>
+      <div id="blink" class="blink"></div>
+      <div class="section-call-buttons">
+        <button id="finish" class="finish-btn"><i></i></button>
+        <button id="mute" class="mute-btn active"><i></i></button>
+        <button id="hit" class="hit">Го!</button>
+      </div>
+    </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div class="easter-container">
+      <div class="col image-col">
+        <img src="images/egg-render.png" class="render-image" />
+        <button class="start-btn">
+          <a
+            href="https://yak.today/?post_type=how_to&p=912&preview_id=912&preview_nonce=cf82fcad1a&preview=true"
+            target="_blank"
+          >
+            Переглянути інструкцію
+          </a>
+        </button>
+        <button id="call" class="start-btn">Почати</button>
+      </div>
+      <div class="col">
+        <h1 class="easter-main-title">
+          <span>Як</span> Великдень
+          <br />
+        </h1>
+        <p>
+          Привіт! Великдень нуступає, а карантин не закінчується. Тому дуже важливо залишатися
+          вдома. Резиденти гараж хабу (ссылка на фб гх) створили пристрій для того, щоб битися
+          пасхальними через Інтернет. Таку штуку можна зробити вдома з дітьми за один день маючи
+          базові навички деревообробки та роботи з Arduino. Ми розробили цю сторінку для того, щоб
+          можна було зв’язатись з рідним та запустити зіткнення яєць.
+        </p>
+        <p>
+          Ми виклали інструкцію з відтворення такого пристрою на платформі yak.today. З усіх
+          інструкцій по протидії коронавіруса ця найменш серйозна. У важкі часи треба не забувати
+          посміхатись та радіти простим речам.
+        </p>
+        <p>Якщо ви зібрали та налаштували такий пристрій - починайте гратись!</p>
+        <p>Веселих свят!</p>
+        <div id="peer-master-section" class="peer-master-section">
+          <h5 class="cta-copy">
+            Перешліть оце посилання своєму другу:
+          </h5>
+          <input id="peer-link" class="peer-link" type="text" class="form-control" value="" />
+        </div>
+      </div>
+    </div>
+    <section class="incoming-call" id="incoming-call">
+      <div class="incoming-call-content">
+        <button class="accept-call-btn" id="accept-call-btn">Прийняти</button>
+      </div>
+    </section>
+    <section class="outro" id="outro">
+      <div class="outro-content">
+        Дякуємо!
+      </div>
+    </section>
   </body>
 </html>

@@ -1,0 +1,82 @@
+.call-section {
+  display: none;
+  background: black;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.call-section .hit {
+  margin: 0;
+}
+
+.call-section .peer-camera {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.call-section .blink {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background: #000;
+}
+.call-section .blink.active {
+  background: #fff;
+}
+
+.section-call-buttons {
+  position: absolute;
+  bottom: 40px;
+  width: 240px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.mute-btn,
+.finish-btn {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 40px;
+  display: flex;
+  cursor: pointer;
+  outline: none;
+}
+.mute-btn i,
+.finish-btn i {
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mute-btn {
+  background: grey;
+  border: 2px solid #343434;
+}
+.mute-btn i {
+  background-image: url(images/mic-icon.png);
+}
+.mute-btn.active {
+  background: #66bb5e;
+  border: 2px solid #118c3e;
+}
+
+.finish-btn {
+  background: red;
+  border: 2px solid #a53333;
+}
+.finish-btn i {
+  background-image: url(images/call-end-icon.png);
+}
